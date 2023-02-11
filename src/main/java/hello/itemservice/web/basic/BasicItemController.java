@@ -30,6 +30,7 @@ public class BasicItemController {
         return "basic/items";
     }
 
+    // 특정 아이템 조회
     @GetMapping("/{itemId}")
     public String item(@PathVariable long itemId, Model model) {
         Item item = itemRepository.findById(itemId);
@@ -37,6 +38,7 @@ public class BasicItemController {
         return "basic/item";
     }
 
+    // 아이템을 주문했을 때
     @GetMapping("/add")
     public String addForm() {
         return "basic/addForm";
